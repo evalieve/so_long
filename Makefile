@@ -2,7 +2,7 @@ NAME = so_long
 CC = gcc
 FLAGS = -Wall -Werror -Wextra 
 MLX = libmlx.a
-SRC = so_long.c
+SRC = so_long.c ./srcs/map/map_general.c ./srcs/map/map_process.c ./srcs/window/window_process.c
 OBJ = $(SRC:.c=.o)
 HEADER = 
 
