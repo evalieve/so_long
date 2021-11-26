@@ -5,8 +5,6 @@
 #include <unistd.h> // for write
 #include <stdlib.h> // for malloc
 
-
-
 typedef struct s_map // structure for checks on valid values
 {
 	int p;
@@ -30,7 +28,7 @@ void ft_init(t_map *info);
 
 int ft_strlen(char *str, char skip);
 
-void ft_error(int error_code, char *hold);
+void ft_error(char *message);
 
 void ft_window_manager(t_map *info);
 
