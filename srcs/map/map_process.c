@@ -90,7 +90,7 @@ char *ft_filler(char *hold, char *buff) // fucntion to fill the string with the 
 	return (result); // result will be returned with the new line
 }
 
-char *ft_mapcopier(t_map *info)
+void ft_mapcopier(t_map *info)
 {
 	int ret; // return value to check for EOF
 	char buff[2]; // buffer to save read byte in
@@ -115,5 +115,5 @@ char *ft_mapcopier(t_map *info)
 	ft_mapchecker(hold, info); // function in function in ... to check if the copied map is valid, returns to this function if so
 	info->length = ft_strlen(hold, '\n') / info->width;
 	printf("length = %d, width = %d\n", info->length, info->width);
-	return (hold); // returns valid map
+	info->map = hold;
 }

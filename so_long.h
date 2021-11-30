@@ -5,6 +5,21 @@
 #include <unistd.h> // for write
 #include <stdlib.h> // for malloc
 
+typedef struct s_data // data for img etc
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_data;
+
+typedef struct s_window // window arguments
+{
+	void *mlx;
+	void *mlx_win;
+}				t_win;
+
 typedef struct s_map // structure for checks on valid values
 {
 	int p;
@@ -12,6 +27,7 @@ typedef struct s_map // structure for checks on valid values
 	int c;
 	int length;
 	int width;
+	char *map;
 }				t_map;
 
 void	ft_chrchecker(char c, t_map *info);
@@ -22,7 +38,7 @@ void ft_mapchecker(char *map, t_map *info);
 
 char *ft_filler(char *hold, char *buff);
 
-char *ft_mapcopier(t_map *info);
+void ft_mapcopier(t_map *info);
 
 void ft_init(t_map *info);
 
