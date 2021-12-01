@@ -30,7 +30,7 @@ typedef struct s_map // structure for checks on valid values
 	char *map;
 }				t_map;
 
-void	ft_chrchecker(char c, t_map *info);
+void ft_chrchecker(char c, t_map *info);
 
 int ft_upbotcheck(char *map, int arg, t_map *info, int i);
 

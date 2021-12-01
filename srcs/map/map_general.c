@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../../so_long.h"
 
 void ft_error(char *message) // if something went wrong, this function will give an error and exits the program
 {

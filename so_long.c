@@ -7,4 +7,5 @@ int main(void)
 	printf("\n%s\n\n", info.map); // prints map, check to see if it is correctly copied
 	ft_window_manager(&info);
 	return (0);
+
 }

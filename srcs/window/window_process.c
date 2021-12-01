@@ -1,4 +1,9 @@
-#include "so_long.h"
+#include "../../so_long.h"
+void ft_imageput()
+{
+	// to put the imaage in place, for less lines in other functions
+}
+
 
 void ft_fill_background(void *mlx, void *mlx_win, t_map info, void *img)
 {
@@ -7,13 +12,15 @@ void ft_fill_background(void *mlx, void *mlx_win, t_map info, void *img)
 	int height;
 
 	t_data way;
+	t_data corner;
+	t_data player;
 
 	width = info.width * 64 - 64;
 	
 	height = info.length * 64 - 64;
-	while (width > -1)
+	while (width >= 0)
 	{
-		while (height > -1)
+		while (height >= 0)
 		{
 			mlx_put_image_to_window(mlx, mlx_win, img, width, height);
 			height -= 64;
@@ -23,29 +30,27 @@ void ft_fill_background(void *mlx, void *mlx_win, t_map info, void *img)
 	}
 	// <<<<<<<<<<<<<<
 	int i;
-	
-	i = 0;
-	height = info.length * 64 - 64;
-	width = info.width * 64 - 64;
 	int img_width;
 	int img_height;
+
+	i = ft_strlen(info.map, '\0') - 1;
+	height = info.length * 64 - 64;
+	width = info.width * 64 - 64;
 	char *relative_path = "sprites/background/grass_full.xpm";
 	way.img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
 	way.addr = mlx_get_data_addr(way.img, &way.bits_per_pixel, &way.line_length, &way.endian);
-	while (height > -1)
+	while (height >= 0)
 	{
-		while (width > -1)
+		while (width >= 0)
 		{
 			if (info.map[i] != '1' && info.map[i] != '\n')
-			{
-				mlx_put_image_to_window(mlx, mlx_win, way.img, width, height);
-				printf("%c, %d\n", info.map[i], i);
-			}
+					mlx_put_image_to_window(mlx, mlx_win, way.img, width, height);
 			width -= 64;
-			i++;
+			i--;
 		}
 		height -= 64;
 		width = info.width * 64 - 64;
+		i--;
 	}
 }
 void ft_window_manager(t_map *info)

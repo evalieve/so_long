@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../../so_long.h"
 
 void	ft_chrchecker(char c, t_map *info) // checks to see if the character is valid or not
 { 
