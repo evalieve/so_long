@@ -8,12 +8,13 @@ void ft_imageput()
 void ft_fill_background(void *mlx, void *mlx_win, t_map info, void *img)
 {
 	// >>>>>>>>>>>>>> background water
+
 	int width;
 	int height;
 
 	t_data way;
-	t_data corner;
-	t_data player;
+	// t_data corner;
+	// t_data player;
 
 	width = info.width * 64 - 64;
 	
@@ -28,7 +29,9 @@ void ft_fill_background(void *mlx, void *mlx_win, t_map info, void *img)
 		width -= 64;
 		height = info.length * 64 - 64;
 	}
+
 	// <<<<<<<<<<<<<<
+
 	int i;
 	int img_width;
 	int img_height;
@@ -69,6 +72,8 @@ void ft_window_manager(t_map *info)
 	background.img = mlx_xpm_file_to_image(mlx.mlx, relative_path, &img_width, &img_height);
 	background.addr = mlx_get_data_addr(background.img, &background.bits_per_pixel, &background.line_length, &background.endian);
 	ft_fill_background(mlx.mlx, mlx.mlx_win, *info, background.img);
+
+	player_render(&mlx);
 
 	mlx_loop(mlx.mlx);
 }

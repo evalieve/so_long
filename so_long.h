@@ -51,3 +51,7 @@ void ft_window_manager(t_map *info);
 void ft_winfix(t_map *info);
 
 int ft_lendigit(int digit);
+
+void player_render(t_win *win);
+
+int key_hook (int keycode, t_win *win);
