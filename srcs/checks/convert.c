@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/28 15:02:57 by evan-der      #+#    #+#                 */
-/*   Updated: 2022/12/30 13:32:54 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/09 18:54:22 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	**map_convert(t_data *data)
 	if (!map)
 		ft_perror(1);
 	map[data->map.rows] = NULL;
-	while (map[i])
+	while (i < data->map.rows)
 	{
 		map[i] = (char *)malloc((data->map.width + 1) * sizeof(char));
 		if (!map[i])

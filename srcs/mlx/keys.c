@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/23 19:32:39 by evan-der      #+#    #+#                 */
-/*   Updated: 2022/12/28 15:53:24 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/09 19:10:28 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	key_action(t_data *data, int num, int rows, int width)
 			if (data->img.collectible->instances[i].x == width * \
 				64 && data->img.collectible->instances[i].y == rows * 64)
 			{
+				printf("wassup chocomel zonder k\n");
 				data->map.collectible--;
 				mlx_set_instance_depth(&data->img.collectible->instances[i], 0);
 				break ;
