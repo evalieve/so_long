@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/14 13:08:51 by evan-der      #+#    #+#                 */
-/*   Updated: 2023/01/09 18:59:12 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/10 18:35:35 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ typedef struct s_data
 	struct s_xpm		xpm;
 	struct s_img		img;
 	int					count;
-	int					collect_inst; // waar kom jij vandaan?
+	int					collect_inst;
 	int					walls_inst;
 	int					bckgrnd_inst;
 }				t_data;

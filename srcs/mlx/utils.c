@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/23 19:32:27 by evan-der      #+#    #+#                 */
-/*   Updated: 2023/01/09 19:23:21 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/10 18:35:20 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,20 @@ void	set_depth_instance(t_data *data)
 {
 	while (data->bckgrnd_inst > 0)
 	{
-		printf("background inst = %d\n", data->bckgrnd_inst);
 		mlx_set_instance_depth(&data->img.background->\
-			instances[data->bckgrnd_inst], 4);
+			instances[data->bckgrnd_inst - 1], 4);
 		data->bckgrnd_inst--;
 	}
 	while (data->walls_inst > 0)
 	{
-		printf("wall inst = %d\n", data->walls_inst);
 		mlx_set_instance_depth(&data->img.wall->\
-			instances[data->walls_inst], 8);
+			instances[data->walls_inst - 1], 8);
 		data->walls_inst--;
 	}
 	while (data->collect_inst > 0)
 	{
-		printf("collect inst = %d\n", data->collect_inst);
 		mlx_set_instance_depth(&data->img.collectible->\
-			instances[data->collect_inst], 6);
+			instances[data->collect_inst - 1], 6);
 		data->collect_inst--;
 	}
 }
@@ -48,7 +45,6 @@ void	player_depth(t_data *data, int left, int right, int back)
 	mlx_set_instance_depth(&data->img.player_b->instances[0], back);
 }
 
-// deze functie nalopen of ik alles erin heb
 void	free_all(t_data *data)
 {
 	mlx_delete_image(data->mlx, data->img.wall);
