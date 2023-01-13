@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/28 14:15:03 by evan-der      #+#    #+#                 */
-/*   Updated: 2022/12/28 21:02:37 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/13 15:33:56 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	midlines(t_data *data, int p)
 				fatal(1, "Map is not surrounded by walls", "(1)");
 			if (count != data->map.width)
 				fatal(1, "Map is not rectangular", \
-					"(lines should be at same length");
+					"(lines must be the same length");
 			count = -1;
 			data->map.rows += 1;
 		}
@@ -70,7 +70,7 @@ int	midlines(t_data *data, int p)
 		p++;
 	}
 	if (count != data->map.width)
-		fatal(1, "Map is not rectangular", "(lines should be at same length)");
+		fatal(1, "Map is not rectangular", "(lines must be the same length)");
 	data->map.rows += 1;
 	return (p);
 }

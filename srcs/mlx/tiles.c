@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/23 19:32:22 by evan-der      #+#    #+#                 */
-/*   Updated: 2023/01/10 18:36:10 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/13 15:41:55 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	end(t_data *data, int width, int height)
 {
 	data->xpm.end = mlx_load_xpm42("./sprites/end/end.xpm42");
 	if (!data->xpm.end)
-		fatal(1, "Failure load xpm end", "(end xpm)");
+		fatal(1, "Failed to load xpm file", "(end)");
 	data->img.end = mlx_texture_to_image(data->mlx, \
 		&data->xpm.end->texture);
 	if (!data->img.end)
-		fatal(1, "Failure mlx texture to image", "(mlx error)");
+		fatal(1, "Failed to convert texture to image", "(mlx error)");
 	while (height * 64 <= data->map.rows * 64 - 64)
 	{
 		while (width * 64 <= data->map.width * 64 - 64)
@@ -29,7 +29,7 @@ void	end(t_data *data, int width, int height)
 			{
 				if (mlx_image_to_window(data->mlx, data->img.end, \
 					width * 64, height * 64) < 0)
-					fatal(1, "Failure mlx img to window", "(mlx error)");
+					fatal(1, "Failed to put image to window", "(mlx error)");
 			}
 			width++;
 		}
@@ -43,11 +43,11 @@ void	collectible(t_data *data, int width, int height)
 {
 	data->xpm.collectible = mlx_load_xpm42("./sprites/collect/collect.xpm42");
 	if (!data->xpm.collectible)
-		fatal(1, "Failure load xpm end", "(collectible xpm)");
+		fatal(1, "Failed load xpm file", "(collectible)");
 	data->img.collectible = mlx_texture_to_image(data->mlx, \
 		&data->xpm.collectible->texture);
 	if (!data->img.collectible)
-		fatal(1, "Failure mlx texture to image", "(mlx error)");
+		fatal(1, "Failed to convert texture to image", "(mlx error)");
 	while (height * 64 <= data->map.rows * 64 - 64)
 	{
 		while (width * 64 <= data->map.width * 64 - 64)
@@ -57,7 +57,7 @@ void	collectible(t_data *data, int width, int height)
 				data->collect_inst++;
 				if (mlx_image_to_window(data->mlx, data->img.collectible, \
 					width * 64, height * 64) < 0)
-					fatal(1, "Failure mlx img to window", "(mlx error)");
+					fatal(1, "Failed to put image to window", "(mlx error)");
 			}
 			width++;
 		}
@@ -70,10 +70,10 @@ void	walls(t_data *data, int width, int height)
 {
 	data->xpm.wall = mlx_load_xpm42("./sprites/tiles/wall.xpm42");
 	if (!data->xpm.wall)
-		fatal(1, "Failure load xpm end", "(wall xpm)");
+		fatal(1, "Failed to load xpm file", "(wall)");
 	data->img.wall = mlx_texture_to_image(data->mlx, &data->xpm.wall->texture);
 	if (!data->img.wall)
-		fatal(1, "Failure mlx texture to image", "(mlx error)");
+		fatal(1, "Failed to convert texture to image", "(mlx error)");
 	while (height * 64 <= data->map.rows * 64 - 64)
 	{
 		while (width * 64 <= data->map.width * 64 - 64)
@@ -83,7 +83,7 @@ void	walls(t_data *data, int width, int height)
 				data->walls_inst++;
 				if (mlx_image_to_window(data->mlx, data->img.wall, \
 					width * 64, height * 64) < 0)
-					fatal(1, "Failure mlx img to window", "(mlx error)");
+					fatal(1, "Failed to put image to window", "(mlx error)");
 			}
 			width++;
 		}
@@ -96,11 +96,11 @@ void	background(t_data *data, int width, int height)
 {
 	data->xpm.background = mlx_load_xpm42("./sprites/tiles/bckgrnd.xpm42");
 	if (!data->xpm.background)
-		fatal(1, "Failure load xpm end", "(background xpm)");
+		fatal(1, "Failed to load xpm file", "(background)");
 	data->img.background = mlx_texture_to_image(data->mlx, \
 		&data->xpm.background->texture);
 	if (!data->img.background)
-		fatal(1, "Failure mlx texture to image", "(mlx error)");
+		fatal(1, "Failed to convert texture to image", "(mlx error)");
 	while (height * 64 <= data->map.rows * 64 - 64)
 	{
 		while (width * 64 <= data->map.width * 64 - 64)
@@ -108,7 +108,7 @@ void	background(t_data *data, int width, int height)
 			data->bckgrnd_inst++;
 			if (mlx_image_to_window(data->mlx, data->img.background, \
 			width * 64, height * 64) < 0)
-				fatal(1, "Failure mlx img to window", "(mlx error)");
+				fatal(1, "Failed to put image to window", "(mlx error)");
 			width++;
 		}
 		width = 0;

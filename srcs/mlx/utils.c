@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/23 19:32:27 by evan-der      #+#    #+#                 */
-/*   Updated: 2023/01/10 18:35:20 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/13 15:55:59 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,18 @@ void	free_all(t_data *data)
 	mlx_delete_image(data->mlx, data->img.wall);
 	mlx_delete_image(data->mlx, data->img.background);
 	mlx_delete_image(data->mlx, data->img.collectible);
+	mlx_delete_image(data->mlx, data->img.end);
 	mlx_delete_image(data->mlx, data->img.player_l);
 	mlx_delete_image(data->mlx, data->img.player_f);
 	mlx_delete_image(data->mlx, data->img.player_b);
 	mlx_delete_image(data->mlx, data->img.player_r);
-	mlx_delete_image(data->mlx, data->img.end);
 	mlx_delete_xpm42(data->xpm.wall);
 	mlx_delete_xpm42(data->xpm.background);
 	mlx_delete_xpm42(data->xpm.collectible);
+	mlx_delete_xpm42(data->xpm.end);
 	mlx_delete_xpm42(data->xpm.player_l);
 	mlx_delete_xpm42(data->xpm.player_f);
 	mlx_delete_xpm42(data->xpm.player_b);
 	mlx_delete_xpm42(data->xpm.player_r);
-	mlx_delete_xpm42(data->xpm.end);
 	free(data->map.map);
 }
