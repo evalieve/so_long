@@ -6,7 +6,7 @@
 /*   By: evan-der <evan-der@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/23 19:32:39 by evan-der      #+#    #+#                 */
-/*   Updated: 2023/01/11 12:37:55 by evan-der      ########   odam.nl         */
+/*   Updated: 2023/01/13 16:33:57 by evan-der      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ int	check_end_wall(t_data *data, int rows, int width)
 	{
 		if (data->map.map[rows][width] == 'E' && data->map.collectible == 0)
 		{
-			free_all(data);
+			data->count++;
+			ft_putstr_fd(ft_itoa(data->count), STDOUT_FILENO);
+			ft_putchar_fd('\n', STDOUT_FILENO);
 			mlx_close_window(data->mlx);
+			free_all(data);
 		}
 		return (1);
 	}
